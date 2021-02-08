@@ -1,0 +1,31 @@
+{
+  "description": "A custom build of the Quill Rich Text Editor to support Polymer web components.",
+  "keywords": [
+    "polymer",
+    "webcomponents",
+    "web-components",
+    "customelements",
+    "custom-elements",
+    "rich-text",
+    "editor",
+    "quill"
+  ],
+  "homepage": "https://github.com/arsnebula/polymer-quill#README",
+  "name": "@hegeda14/polymer-quill",
+  "version": "",
+  "resolutions": {
+    "inherits": "2.0.3",
+    "samsam": "1.1.3",
+    "supports-color": "3.1.2",
+    "type-detect": "1.0.0"
+  },
+  "main": "polymer-quill.js",
+  "author": "Chris Beckett <chrisb@arsnebula.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0"
+  },
+  "devDependencies": {
+    "@polymer/iron-demo-helpers": "^3.0.0"
+  }
+}

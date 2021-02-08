@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <title>polymer-quill demo</title>
+  <script src="https://unpkg.com/@webcomponents/webcomponentsjs@^2.0.0/webcomponents-loader.js"></script>
+  <script type="module">
+    import '@polymer/iron-demo-helpers/demo-snippet.js';
+    import '@polymer/iron-demo-helpers/demo-pages-shared-styles.js';
+    import '../polymer-quill.js';
+
+    import {html} from '@polymer/polymer/lib/utils/html-tag.js';
+
+    const template = html`
+      <custom-style>
+        <style include="demo-pages-shared-styles quill-core quill-snow">
+            .editor {
+                height: 30vh;
+                overflow-x: auto;
+            }
+        </style>
+      </custom-style>`;
+
+    document.body.appendChild(template.content);
+  </script>
+</head>
+<body unresolved>
+  <div class="vertical-section-container centered">
+    <h3>Basic polymer-quill with toolbar Demo</h3>
+    <demo-snippet>
+      <template>
+        <style include="quill-core quill-snow">
+            .editor {
+                height: 30vh;
+                overflow-x: auto;
+            }
+        </style>
+        <div id="editor_with_toolbar" class="editor">
+          <p>Polymer Quill</p>
+        </div>
+        <script type="module">
+          let editor = new Quill(document.querySelector('#editor_with_toolbar'), {
+              theme: 'snow',
+              readOnly: false,
+              modules: {
+                  toolbar: [
+                    ['bold', 'italic', 'underline', 'strike'],			// toggled buttons
+                    ['blockquote', 'code-block', 'image'],
+
+                    [{ 'header': 1 }, { 'header': 2 }],					// custom button values
+                    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                    [{ 'script': 'sub'}, { 'script': 'super' }],		// superscript/subscript
+                    [{ 'indent': '-1'}, { 'indent': '+1' }],			// outdent/indent
+                    [{ 'direction': 'rtl' }],							// text direction
+
+                    [{ 'size': ['small', false, 'large', 'huge'] }],	// custom dropdown
+                    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+                    [{ 'color': [] }, { 'background': [] }],			// dropdown with defaults from theme
+                    [{ 'font': [] }],
+                    [{ 'align': [] }],
+
+                    ['clean']											// remove formatting button
+                ]
+              }
+          });
+        </script>
+      </template>
+    </demo-snippet>
+  </div>
+
+  <div class="vertical-section-container centered">
+    <h3>Basic polymer-quill without toolbar Demo</h3>
+    <demo-snippet>
+      <template>
+        <style include="quill-core quill-snow">
+            .editor {
+                height: 30vh;
+                overflow-x: auto;
+            }
+        </style>
+        <div id="editor_without_toolbar" class="editor">
+          <p>Polymer Quill</p>
+        </div>
+        <script type="module">
+          let editor = new Quill(document.querySelector('#editor_without_toolbar'), {
+              theme: 'snow',
+              readOnly: false,
+              modules: {
+                  toolbar: false
+              }
+          });
+        </script>
+      </template>
+    </demo-snippet>
+  </div>
+
+  <div class="vertical-section-container centered">
+    <h3>Basic polymer-quill readonly Demo</h3>
+    <demo-snippet>
+      <template>
+        <style include="quill-core quill-snow">
+            .editor {
+                height: 30vh;
+                overflow-x: auto;
+            }
+        </style>
+        <div id="editor_readonly" class="editor">
+          <p>Polymer Quill</p>
+        </div>
+        <script type="module">
+          let editor = new Quill(document.querySelector('#editor_readonly'), {
+              theme: 'snow',
+              readOnly: true,
+              modules: {
+                  toolbar: false
+              }
+          });
+        </script>
+      </template>
+    </demo-snippet>
+  </div>
+</body>
+</html>
