@@ -12,7 +12,7 @@
   ],
   "homepage": "https://github.com/arsnebula/polymer-quill#README",
   "name": "@hegeda14/polymer-quill",
-  "version": "",
+  "version": "0.0.1",
   "resolutions": {
     "inherits": "2.0.3",
     "samsam": "1.1.3",
